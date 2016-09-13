@@ -29,8 +29,23 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
         
         public function form( $instance ) {
             
+            $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'content' => '' ) );
+            $title = sanitize_text_field( $instance['title'] );
+            ?>
             
+            <p>
+                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wewe' ); ?>:</label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+            </p>
+            
+            <?php
+                $settings = array(
+                    'textarea_name' => $this->get_field_name( 'content' ),
+                    'textarea_rows' => 10
+                );
+                wp_editor( $instance['content'], $this->get_field_id( 'content' ), $settings );
                 
+                echo '<br>';
         }
         
         
