@@ -24,6 +24,8 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
             
             $title = empty( $instance['title'] ) ? '' : $instance['title'];
             $content = empty( $instance['content'] ) ? '' : $instance['content'];
+            $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+            $content = apply_filters( 'wewe_content', $content, $instance, $this );
             
             if ( empty( $content ) ) {
                 return;
