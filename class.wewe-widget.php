@@ -22,7 +22,13 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
         
         public function widget( $args, $instance ) {
             
+            $title = empty( $instance['title'] ) ? '' : $instance['title'];
+            $content = empty( $instance['content'] ) ? '' : $instance['content'];
             
+            echo $args['before_widget'];
+            echo $args['before_title'] . $title . $args['after_title'];
+            echo $content;
+            echo $args['after_widget'];
             
         }
         
