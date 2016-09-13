@@ -25,8 +25,14 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
             $title = empty( $instance['title'] ) ? '' : $instance['title'];
             $content = empty( $instance['content'] ) ? '' : $instance['content'];
             
+            if ( empty( $content ) ) {
+                return;
+            }
+            
             echo $args['before_widget'];
-            echo $args['before_title'] . $title . $args['after_title'];
+            if ( ! empty( $title ) ) {
+                echo $args['before_title'] . $title . $args['after_title'];
+            }
             echo $content;
             echo $args['after_widget'];
             
