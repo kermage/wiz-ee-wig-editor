@@ -51,7 +51,11 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
         
         public function update( $new_instance, $old_instance ) {
             
+            $instance = $old_instance;
+            $instance['title'] = sanitize_text_field( $new_instance['title'] );
+            $instance['content'] = ! empty( $new_instance['content'] ) ? $new_instance['content'] : '';
             
+            return $instance;
             
         }
         
