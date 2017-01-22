@@ -1,0 +1,49 @@
+/*!
+ *  Wiz-Ee-Wig Editor 0.1.0
+ *  Copyright (C) 2016 Gene Alyson Fortunado Torcende
+ *  Licensed under GNU General Public License v2 or later.
+ */
+
+#wewe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: none;
+}
+
+#wewe.active {
+    display: block;
+}
+
+#wewe:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba( 0, 0, 0, 0.5 );
+}
+
+.wewe-container {
+    margin: 2rem;
+    padding: 2rem;
+}
+
+.wewe-buttons {
+    padding-top: 1rem;
+    text-align: right;
+}
+
+.wewe-content {
+    display: none;
+}
+
+.wewe-edit {
+    width: 100%;
+    text-align: center;
+}

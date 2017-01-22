@@ -52,14 +52,12 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
             </p>
             
+            <p>
+                <a class="button-primary wewe-edit" id="<?php echo $this->get_field_id( 'fullscreen' ); ?>" href="#"><?php _e( 'Edit Content', 'wewe' ); ?></a>
+                <textarea class="widefat wewe-content" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" rows="10"><?php echo esc_textarea( $instance['content'] ); ?></textarea>
+            </p>
+            
             <?php
-                $settings = array(
-                    'textarea_name' => $this->get_field_name( 'content' ),
-                    'textarea_rows' => 10
-                );
-                wp_editor( $instance['content'], $this->get_field_id( 'content' ), $settings );
-                
-                echo '<br>';
         }
         
         
