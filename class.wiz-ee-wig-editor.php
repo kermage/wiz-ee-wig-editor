@@ -25,9 +25,11 @@ if ( ! class_exists( 'WizEeWig_Editor' ) ) {
         private function __construct() {
             
             add_action( 'widgets_init', array( $this, 'widget_init' ) );
-            add_action( 'widgets_admin_page', array( $this, 'output_editor' ) );
             add_action( 'load-widgets.php', array( $this, 'scripts_styles' ) );
-        
+            add_action( 'load-customize.php', array( $this, 'scripts_styles' ) );
+            add_action( 'widgets_admin_page', array( $this, 'output_editor' ) );
+            add_action( 'customize_controls_print_footer_scripts', array( $this, 'output_editor' ) );
+            
         }
         
         
