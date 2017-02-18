@@ -45,13 +45,14 @@ if ( ! class_exists( 'WizEeWig_Editor' ) ) {
                     <?php
                     
                         $settings = array(
-                            'textarea_rows' => 10
+                            'textarea_rows' => 15
                         );
                         wp_editor( '', 'wewe-editor', $settings );
                         
                     ?>
                     <div id="wewe-buttons">
                         <input type="hidden" id="wewe-id" value="">
+                        <input type="hidden" id="wewe-type" value="">
                         <a href="#" id="wewe-close" class="button button-primary">Close</a>
                     </div>
                 </div>
