@@ -40,8 +40,8 @@ if ( ! class_exists( 'WizEeWig_Editor' ) ) {
         
         public function output_editor() { ?>
         
-            <div id="wewe" class="wewe-wrapper">
-                <div class="wewe-container">
+            <div id="wewe">
+                <div id="wewe-container">
                     <?php
                     
                         $settings = array(
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WizEeWig_Editor' ) ) {
                         wp_editor( '', 'wewe-editor', $settings );
                         
                     ?>
-                    <div class="wewe-buttons">
+                    <div id="wewe-buttons">
                         <input type="hidden" id="wewe-id" value="">
                         <a href="#" id="wewe-close" class="button button-primary">Close</a>
                     </div>

@@ -4,6 +4,10 @@
  *  Licensed under GNU General Public License v2 or later.
  */
 
+.wewe-active {
+    overflow: hidden;
+}
+
 #wewe {
     position: fixed;
     top: 0;
@@ -14,7 +18,7 @@
     display: none;
 }
 
-#wewe.active {
+.wewe-active #wewe {
     display: block;
 }
 
@@ -29,12 +33,19 @@
     background: rgba( 0, 0, 0, 0.5 );
 }
 
-.wewe-container {
-    margin: 2rem;
+#wewe-container {
+    background: #fff;
+    position: relative;
     padding: 2rem;
+    top: 50%;
+    transform: translateY( -50% );
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 80%;
 }
 
-.wewe-buttons {
+#wewe-buttons {
     padding-top: 1rem;
     text-align: right;
 }

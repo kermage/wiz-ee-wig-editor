@@ -11,13 +11,13 @@
     
     $( document ).on( 'click', 'a[id^="widget-wewe-"][id $="-fullscreen"]', function( e ) {
         e.preventDefault();
-        
+
         contentID = e.target.id.replace( 'fullscreen', 'content' );
-		content = $( '#' + contentID ).val();
+        content = $( '#' + contentID ).val();
 
         $( '#wewe-id' ).val( contentID );
-		$( '#wewe-editor' ).val( content );
-        $( '#wewe' ).addClass( 'active' );
+        $( '#wewe-editor' ).val( content );
+        $( 'body' ).addClass( 'wewe-active' );
     });
     
     $( document ).on( 'click', 'a[id="wewe-close"]', function( e ) {
@@ -29,7 +29,7 @@
         widgetID = $( '#wewe-id' ).val();
 
         $( '#' + widgetID ).val( content );
-        $( '#wewe' ).removeClass( 'active' );
+        $( 'body' ).removeClass( 'wewe-active' );
     });
 
 }(jQuery));
