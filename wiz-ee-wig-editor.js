@@ -7,18 +7,14 @@
 (function($) {
 	'use strict';
 
-    var content, contentID, widgetID, editorType;
+    var content, contentID, widgetID, typeID, editorType;
     
     $( document ).on( 'click', 'a[id^="widget-wewe-"][id $="-fullscreen"]', function( e ) {
         e.preventDefault();
 
-        if ( $( '#wp-wewe-editor-wrap' ).hasClass( 'tmce-active' ) ) {
-            editorType = 'wewe-editor-tmce';
-        } else {
-            editorType = 'wewe-editor-html';
-        }
         $( '#wewe-editor-html' ).trigger( 'click' );
 
+        typeID = e.target.id.replace( 'fullscreen', 'type' );
         contentID = e.target.id.replace( 'fullscreen', 'content' );
         content = $( '#' + contentID ).val();
 
@@ -26,6 +22,7 @@
         $( '#wewe-editor' ).val( content );
         $( 'body' ).addClass( 'wewe-active' );
 
+        editorType = $( '#' + typeID ).val();
         $( '#' + editorType ).trigger( 'click' );
     });
     
@@ -39,13 +36,13 @@
         editorType = $( '#wewe-type' ).val();
         $( '#wewe-editor-html' ).trigger( 'click' );
 
+        typeID = $( '#wewe-id' ).val().replace( 'content', 'type' );
         content = $( '#wewe-editor' ).val();
         widgetID = $( '#wewe-id' ).val();
 
         $( '#' + widgetID ).val( content );
+        $( '#' + typeID ).val( editorType );
         $( 'body' ).removeClass( 'wewe-active' );
-
-        $( '#' + editorType ).trigger( 'click' );
     });
 
 }(jQuery));

@@ -43,7 +43,7 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
         
         public function form( $instance ) {
             
-            $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'content' => '' ) );
+            $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'content' => '', 'type' => '' ) );
             $title = sanitize_text_field( $instance['title'] );
             ?>
             
@@ -55,6 +55,7 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
             <p>
                 <a class="button-primary wewe-edit" id="<?php echo $this->get_field_id( 'fullscreen' ); ?>" href="#"><?php _e( 'Edit Content', 'wewe' ); ?></a>
                 <textarea class="widefat wewe-content" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" rows="10"><?php echo esc_textarea( $instance['content'] ); ?></textarea>
+                <input type="hidden" id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="<?php echo $instance['type']; ?>" />
             </p>
             
             <?php
@@ -66,6 +67,7 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
             $instance = $old_instance;
             $instance['title'] = sanitize_text_field( $new_instance['title'] );
             $instance['content'] = ! empty( $new_instance['content'] ) ? $new_instance['content'] : '';
+            $instance['type'] = ! empty( $new_instance['type'] ) ? $new_instance['type'] : '';
             
             return $instance;
             
