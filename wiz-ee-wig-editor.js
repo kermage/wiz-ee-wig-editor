@@ -44,5 +44,30 @@
         $( '#' + typeID ).val( editorType );
         $( 'body' ).removeClass( 'wewe-active' );
     });
+    
+    $( document ).on( 'click', 'a[id="wewe-save"]', function( e ) {
+        e.preventDefault();
+
+        editorType = $( '#wewe-type' ).val();
+        $( '#wewe-editor-html' ).trigger( 'click' );
+
+        typeID = $( '#wewe-id' ).val().replace( 'content', 'type' );
+        content = $( '#wewe-editor' ).val();
+        widgetID = $( '#wewe-id' ).val();
+
+        $( '#' + widgetID ).val( content );
+        $( '#' + typeID ).val( editorType );
+        
+        if ( $( 'body' ).hasClass( 'wp-customizer' ) ) {
+            // customize.php
+            var thisWidget = wp.customize.Widgets.getWidgetFormControlForWidget( widgetID.replace( 'widget-', '' ).replace( '-content', '' ) )
+            thisWidget.updateWidget();
+        } else {
+            // widgets.php
+            wpWidgets.save( $( '#' + widgetID ).closest( 'div.widget' ), 0, 1, 0 );
+        }
+
+        $( '#' + editorType ).trigger( 'click' );
+    });
 
 }(jQuery));
