@@ -62,6 +62,14 @@
     text-align: right;
 }
 
+.wewe-active.mce-fullscreen #wewe-buttons {
+    position: fixed;
+    padding: 0.25rem;
+    top: 0;
+    right: 0;
+    z-index: 100010;
+}
+
 .wewe-content {
     display: none;
 }
