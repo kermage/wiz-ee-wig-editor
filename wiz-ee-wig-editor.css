@@ -26,6 +26,10 @@
     display: block;
 }
 
+.wewe-active.mce-fullscreen #wewe {
+    z-index: 100000;
+}
+
 #wewe:after {
     content: '';
     position: fixed;
@@ -47,6 +51,10 @@
     right: 0;
     margin: auto;
     max-width: 80%;
+}
+
+.wewe-active.mce-fullscreen #wewe-container {
+    transform: initial;
 }
 
 #wewe-buttons {
