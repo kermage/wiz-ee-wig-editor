@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+.wewe-active.wp-customizer .mce-toolbar-grp {
+    z-index: 500000;
+}
+
 #wewe {
     position: fixed;
     top: 0;
