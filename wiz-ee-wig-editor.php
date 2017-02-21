@@ -11,7 +11,7 @@
  * Author:      Gene Alyson Fortunado Torcende
  * Author URI:  mailto:genealyson.torcende@gmail.com
  * Description: A WYSIWYG widget using the wp_editor().
- * Version:     0.1.0
+ * Version:     1.0.0
  * License:     GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wewe
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /* ==================================================
 Global constants
 ================================================== */
-define( 'WEWE_VERSION',  '0.1.0' );
+define( 'WEWE_VERSION',  '1.0.0' );
 define( 'WEWE_FILE',     __FILE__ );
 define( 'WEWE_URL',      plugin_dir_url( WEWE_FILE ) );
 define( 'WEWE_PATH',     plugin_dir_path( WEWE_FILE ) );

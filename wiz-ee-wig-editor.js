@@ -1,5 +1,5 @@
 /*!
- *  Wiz-Ee-Wig Editor 0.1.0
+ *  Wiz-Ee-Wig Editor 1.0.0
  *  Copyright (C) 2016 Gene Alyson Fortunado Torcende
  *  Licensed under GNU General Public License v2 or later.
  */
@@ -9,13 +9,13 @@
 
     var content, contentID, widgetID, typeID, editorType;
     
-    $( document ).on( 'click', 'a[id^="widget-wewe-"][id $="-fullscreen"]', function( e ) {
+    $( document ).on( 'click', 'a[id^="widget-wewe-"][id $="-edit"]', function( e ) {
         e.preventDefault();
 
         $( '#wewe-editor-html' ).trigger( 'click' );
 
-        typeID = e.target.id.replace( 'fullscreen', 'type' );
-        contentID = e.target.id.replace( 'fullscreen', 'content' );
+        typeID = e.target.id.replace( 'edit', 'type' );
+        contentID = e.target.id.replace( 'edit', 'content' );
         content = $( '#' + contentID ).val();
 
         $( '#wewe-id' ).val( contentID );

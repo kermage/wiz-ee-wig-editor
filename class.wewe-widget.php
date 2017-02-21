@@ -53,7 +53,7 @@ if ( ! class_exists( 'WEWE_Widget' ) ) {
             </p>
             
             <p>
-                <a class="button-primary wewe-edit" id="<?php echo $this->get_field_id( 'fullscreen' ); ?>" href="#"><?php _e( 'Edit Content', 'wewe' ); ?></a>
+                <a class="button-primary wewe-edit" id="<?php echo $this->get_field_id( 'edit' ); ?>" href="#"><?php _e( 'Edit Content', 'wewe' ); ?></a>
                 <textarea class="widefat wewe-content" id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" rows="10"><?php echo esc_textarea( $instance['content'] ); ?></textarea>
                 <input type="hidden" id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" value="<?php echo $instance['type']; ?>" />
             </p>
