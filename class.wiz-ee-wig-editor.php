@@ -65,7 +65,7 @@ if ( ! class_exists( 'WizEeWig_Editor' ) ) {
         
         public function scripts_styles() {
             
-            wp_enqueue_style( 'wewe-css', WEWE_URL . 'wiz-ee-wig-editor.css', array(), WEWE_VERSION, false );
+            wp_enqueue_style( 'wewe-css', WEWE_URL . 'wiz-ee-wig-editor.css', array(), WEWE_VERSION );
             wp_enqueue_script( 'wewe-js', WEWE_URL . 'wiz-ee-wig-editor.js', array( 'jquery' ), WEWE_VERSION, true );
             
         }
